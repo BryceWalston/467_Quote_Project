@@ -1,0 +1,15 @@
+FROM php:8.2-apache
+
+# Install required PHP extensions
+RUN docker-php-ext-install pdo pdo_mysql mysqli
+
+# (Optional) Enable Apache mod_rewrite for clean URLs,
+# safe to leave enabled even if you don't use it.
+RUN a2enmod rewrite
+
+# Set recommended PHP.ini settings
+# (Optional) but good for development debugging
+RUN mv "$PHP_INI_DIR/php.ini-development" "$PHP_INI_DIR/php.ini"
+
+# The web root is /var/www/html, we will mount ./src there via docker-compose
+WORKDIR /var/www/html
