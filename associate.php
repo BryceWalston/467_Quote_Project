@@ -2,9 +2,10 @@
 <html>
     <head> 
         <meta charset="utf-8">
-        <title></title>
+        <title>Sales Associate</title>
     </head>
     <body>
+        <p>YOOOOOOOOOO!</p>
         <?php
 
         ?>
