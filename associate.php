@@ -6,6 +6,7 @@
     </head>
     <body>
         <p>associate page works.</p>
+        <p>YOOOOOOOOOO!</p>
         <?php
 
         ?>
