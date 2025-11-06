@@ -2,10 +2,10 @@
 <html>
     <head> 
         <meta charset="utf-8">
-        <title>Sales Associate</title>
+        <title>Administrator</title>
     </head>
     <body>
-        <p>associate page works.</p>
+        <p>admin page works.</p>
         <?php
 
         ?>
