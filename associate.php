@@ -8,7 +8,7 @@
         <p>associate page works.</p>
         <p>YOOOOOOOOOO!</p>
         <?php
-
+            echo "hello world";
         ?>
     </body>
 </html>
