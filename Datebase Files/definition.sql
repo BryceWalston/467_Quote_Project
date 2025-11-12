@@ -19,6 +19,7 @@ CREATE TABLE Quotes(
     TOTAL DECIMAL(15,2) DEFAULT 0,
     CustomerID INT(8) NOT NULL,
     Status CHAR(1),
+    sDate DATE DEFAULT CURRENT_TIMESTAMP(),
     PRIMARY KEY(QuoteID)
 );
 
