@@ -7,7 +7,7 @@
     <body>
         <p>admin page works.</p>
         <?php
-
+            echo "yes it does";
         ?>
     </body>
 </html>
