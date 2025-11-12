@@ -1,0 +1,50 @@
+DROP TABLE IF EXISTS LineItems;
+DROP TABLE IF EXISTS Notes;
+DROP TABLE IF EXISTS Associates;
+DROP TABLE IF EXISTS Quotes;
+DROP TABLE IF EXISTS Items;
+
+CREATE TABLE Associates(
+
+    EmpID INT(8) AUTO_INCREMENT NOT NULL,
+    Name VARCHAR(25), 
+    Password VARCHAR(25),
+    CommisionTotal DECIMAL(12,2) DEFAULT 0,
+    Address VARCHAR(25),
+    PRIMARY KEY(EmpID)
+);
+
+CREATE TABLE Quotes(
+    QuoteID INT(8) AUTO_INCREMENT NOT NULL,
+    TOTAL DECIMAL(15,2) DEFAULT 0,
+    CustomerID INT(8) NOT NULL,
+    Status CHAR(1),
+    PRIMARY KEY(QuoteID)
+);
+
+CREATE TABLE Notes(
+    NoteID INT(8) AUTO_INCREMENT NOT NULL,
+    QuoteID INT(8) NOT NULL,
+    text VARCHAR(133),
+    time DATETIME DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY(NoteID),
+    FOREIGN KEY(QuoteID) REFERENCES Quotes(QuoteID)
+);
+
+CREATE TABLE Items(
+    ItemID INT(8) AUTO_INCREMENT NOT NULL,
+    name VARCHAR(25) NOT NULL,
+    description VARCHAR(133),
+    price DECIMAL(15,2),
+    PRIMARY KEY(ItemID)
+
+);
+
+CREATE TABLE LineItems(
+    QuoteID INT(8) NOT NULL,
+    ItemID INT(8) NOT NULL,
+    qty INT(8) DEFAULT 0,
+    PRIMARY KEY(QuoteID,ItemID),
+    FOREIGN KEY(QuoteID) REFERENCES Quotes(QuoteID),
+    FOREIGN KEY(ItemID) REFERENCES Items(ItemID)
+);
