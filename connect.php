@@ -1,6 +1,7 @@
 <?php
 try {
-	$pdo = new PDO('mysql:host=courses;dbname=z1998722', 'z1998722', '2005Jul17');
+	#this will work for xampp logins.
+	$pdo = new PDO('mysql:host=localhost;dbname=csci467', 'root', '');
 	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
 	exit("Database connection failed: " . $e->getMessage());
