@@ -28,7 +28,7 @@
                 echo "<tr>";
                     echo "<td>{$row['Name']}</td>";
                     echo "<td>{$row['Password']}</td>";
-                    echo "<td>${$row['CommissionTotal']}</td>";
+                    echo "<td>" . '$' . "{$row['CommissionTotal']}" . "</td>";
                     echo "<td>{$row['Address']}</td>";
                 echo "</tr>";
             }
