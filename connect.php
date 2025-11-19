@@ -7,3 +7,24 @@ try {
 	exit("Database connection failed: " . $e->getMessage());
 }
 ?>
+
+<style>
+	table,th,td{
+		border: 1px solid black;
+	}
+	th,td{
+		padding: 10px;
+	}
+	table{
+		width: 70%;
+		border-collapse: collapse;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	th{
+		background-color: #82EEFD;
+	}
+	td{
+		background-color: #f9f9f9;
+	}
+</style>
