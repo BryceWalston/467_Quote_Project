@@ -10,7 +10,15 @@
     <body>
         <div>
         <?php
-            /* first display a table of all the employees. */
+            //check to see if we should process form data
+            if($_SERVER['REQUEST_METHOD'] === "POST"){
+                //check to see if we should add a user
+                if(!empty(trim($_POST['username'])) && !empty(trim($_POST['password']))){
+                    $stmt = $pdo->prepare("INSERT INTO Associates(Name,Password) VALUES (?,?)");
+                    $stmt->execute(array($_POST['username'],$_POST['password']));
+                }
+            }
+            /* Display a table of all the employees. */
             $result = $pdo->query("SELECT Name,Password,CommissionTotal,Address FROM Associates");
             //retrieve all the rows from the table.
             echo "<table>";
@@ -27,7 +35,7 @@
             echo "</table>";
         ?>
         </div>
-            <form method="post" action="admin.php">
+            <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
                 <label for="username">Name:</label>
                 <input type='textbox' name="username" id="username">
                 <label for="password">Password:</label>
