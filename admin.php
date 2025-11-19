@@ -22,7 +22,7 @@
             $result = $pdo->query("SELECT Name,Password,CommissionTotal,Address FROM Associates");
             //retrieve all the rows from the table.
             echo "<table>";
-            echo "<tr><th>Name</th><th>Password</th><th>Comission Total</th><th>Address</th></tr>";
+            echo "<tr><th>Name</th><th>Password</th><th>Commission Total</th><th>Address</th></tr>";
             while(($row = $result->fetch(PDO::FETCH_ASSOC))){
                 //print all table elements
                 echo "<tr>";
