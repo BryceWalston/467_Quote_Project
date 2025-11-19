@@ -10,7 +10,7 @@ CREATE TABLE Associates(
     Name VARCHAR(25), 
     Password VARCHAR(25),
     CommissionTotal DECIMAL(12,2) DEFAULT '0.00',
-    Address VARCHAR(25),
+    Address VARCHAR(25) DEFAULT '',
     PRIMARY KEY(EmpID)
 );
 
