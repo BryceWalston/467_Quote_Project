@@ -8,6 +8,7 @@
         <title>Administrator</title>
     </head>
     <body>
+        <div>
         <?php
             /* first display a table of all the employees. */
             $result = $pdo->query("SELECT Name,Password,CommissionTotal,Address FROM Associates");
@@ -25,5 +26,14 @@
             }
             echo "</table>";
         ?>
+        </div>
+            <form method="post" action="admin.php">
+                <label for="username">Name:</label>
+                <input type='textbox' name="username" id="username">
+                <label for="password">Password:</label>
+                <input type='textbox' name="password" id="password">
+                <input type="submit">
+
+            </form>
     </body>
 </html>

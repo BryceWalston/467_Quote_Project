@@ -27,4 +27,9 @@ try {
 	td{
 		background-color: #f9f9f9;
 	}
+	form{
+		width: 70%;
+		margin-left: auto;
+		margin-right: auto;
+	}
 </style>
